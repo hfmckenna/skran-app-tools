@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test-cloud-gallery:
+  skran-app-tools:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
       - name: Checkout
@@ -34,7 +34,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@hfmckenna'
       - run: npm publish
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
