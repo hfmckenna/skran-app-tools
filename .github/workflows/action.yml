@@ -31,4 +31,10 @@ jobs:
         run: npm run build
 
       - name: Publish
-        run: NPM_TOKEN=${{ secrets.GITHUB_TOKEN }} && npm publish
+        uses: actions/setup-node@v3
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@hfmckenna'
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
