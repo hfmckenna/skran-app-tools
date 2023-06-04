@@ -1,44 +1,26 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "dist",
-    "target": "esnext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "module": "esnext",
-    "experimentalDecorators": true,
-    "sourceMap": true,
+    "allowJs": true,
+    "target": "ES2017",
+    "module": "ES2020",
+    "lib": ["es2020", "DOM"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik",
+    "strict": true,
     "declaration": true,
-    "esModuleInterop": true,
-    "noImplicitAny": true,
-    "moduleResolution": "node",
+    "declarationDir": "lib/types",
     "resolveJsonModule": true,
-    "alwaysStrict": true,
-    // Ensures that your files are parsed in the ECMAScript strict mode, and emit “use strict” for each source file.
-    "allowUnreachableCode": false,
-    // pick up dead code paths
-    "strictNullChecks": true,
-    // When strictNullChecks is true, null and undefined have their own distinct types and you’ll get a type error if you try to use them where a concrete value is expected.
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    // accessing index must always check for undefined
-    "noUnusedLocals": true,
-    // Report errors on unused local variables.
-    "noUnusedParameters": true,
-    // Report errors on unused parameters in functions
-    "paths": {
-      "@src/*": [
-        "./src/*"
-      ]
-    }
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules/**/*"
-  ]
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "isolatedModules": true,
+    // The "@builder.io/qwik/server" type is so we can use:
+    // `import { manifest } from "@qwik-client-manifest";`
+    "types": [
+      "vite/client",
+      "@cloudflare/workers-types",
+      "@builder.io/qwik/server"
+    ]
+  }
 }
