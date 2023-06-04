@@ -1,13 +1,14 @@
 {
   "name": "@hfmckenna/skran-app-tools",
-  "version": "0.210.0",
+  "version": "0.210.1",
   "description": "",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "type": "module",
-  "qwik": "./lib/index.qwik.mjs",
-  "module": "./lib/index.qwik.mjs",
+  "main": "./lib/index.qwik.js",
+  "qwik": "./lib/index.qwik.js",
+  "module": "./lib/index.qwik.js",
   "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {

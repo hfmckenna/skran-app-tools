@@ -7,7 +7,7 @@ export default defineConfig(() => ({
     lib: {
       entry: 'src/index.tsx',
       formats: ['es'],
-      fileName: 'index.qwik.mjs',
+      fileName: 'index.qwik',
     },
     rollupOptions: {
       external: ['cookie'],
