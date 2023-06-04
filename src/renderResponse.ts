@@ -57,9 +57,11 @@ class HtmlResponse extends Response {
 }
 
 class SimpleStreamWriter implements StreamWriter {
-  private writer = this.writable.getWriter();
+  private writer;
   private encoder = new TextEncoder();
-  constructor(private writable: WritableStream) {}
+  constructor(private writable: WritableStream) {
+    this.writer = this.writable.getWriter();
+  }
 
   write(chunk: string) {
     this.writer.write(

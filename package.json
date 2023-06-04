@@ -6,14 +6,12 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "type": "module",
-  "main": "./lib/index.qwik.cjs",
   "qwik": "./lib/index.qwik.mjs",
   "module": "./lib/index.qwik.mjs",
-  "types": "./lib-types/index.d.ts",
+  "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.qwik.mjs",
-      "require": "./lib/index.qwik.cjs"
+      "import": "./lib/index.qwik.mjs"
     }
   },
   "files": [
@@ -22,7 +20,7 @@
   ],
   "scripts": {
     "build": "vite build --mode lib",
-    "build.types": "tsc --emitDeclarationOnly",
+    "postbuild": "tsc --emitDeclarationOnly",
     "lint": "eslint \"src/**/*.ts*\"",
     "check-format": "prettier --check --ignore-path=../.prettierignore .",
     "format": "prettier --write --ignore-path=../.prettierignore .",

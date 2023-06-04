@@ -3,11 +3,11 @@ import { qwikVite } from '@builder.io/qwik/optimizer';
 
 export default defineConfig(() => ({
   build: {
-    target: 'es2020',
+    target: 'es2022',
     lib: {
       entry: 'src/index.tsx',
-      formats: ['cjs', 'es'],
-      fileName: (format) => `index.qwik.${format === 'es' ? 'mjs' : 'cjs'}`,
+      formats: ['es'],
+      fileName: 'index.qwik.mjs',
     },
     rollupOptions: {
       external: ['cookie'],
